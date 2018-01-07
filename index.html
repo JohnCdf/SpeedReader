@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Speed Reading App</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="speedread.css" rel="stylesheet"></link>
+        <script src="speedread.js"></script>
+
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    </head>
+    <body>
+        <nav>
+            <a href="about.html">About</a> <a>Github</a> <a>News API</a>
+        </nav>
+        <div id="createText">
+            <h1>Enter text to Speed read</h1>
+            <textarea id="text-input" placeholder="Enter text to speed read here">This is a tool used to read texts faster than the average 200wpm - The reason it works is the fact that instead of having to track the words across a page, they are being flashed/replaced, so the movement of your eyes doesnt delay the pace of reading. I've set the default to 300WPM but you can feel free to change it to whatever value you want. Enjoy reading a book a day! (if not more).</textarea><br>
+            <h1>Words Per Minute</h1>
+            <input placeholder="Words Per Minute" id="WPM-input" value="300"/>
+            <br>
+            <button onClick="submitText()">Speed Read</button>
+        </div>
+        <div id="readText">
+            <div id="word-area">
+                <h1 id="Word">Word</h1>
+            </div>
+            <div id="controls">
+            <button onClick="stop()" class="fa fa-step-backward"></button>  <button onClick="start()" class="fa fa-play" id="fa-play"></button>  <button onclick="pause()" class="fa fa-pause" id="fa-pause"></button>
+            <button onClick="newText()">New Text</button>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,81 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    padding:0;
+    margin:0;
+}
+
+nav{
+    min-height: 50px;
+    width:100%;
+    background-color: #090C24;
+    color: white;
+    margin:auto;
+    font-size: 150%;
+    vertical-align: center;
+}
+nav a {
+    margin: 2em;
+    color:white;
+
+    transition: all .2s ease-in-out;
+}
+nav a:hover{
+    color: #2D7D2C;
+    text-decoration: none;
+
+}
+#createText {
+    overflow: hidden;
+    width: 70%;
+    height: 90vh;
+    margin: auto;
+    background-image: url("https://forum.bpmn.io/uploads/default/original/1X/5e3ed8d11a1f6bdccc2fc4e10af170fc8831accb.PNG");
+    border:3px solid purple;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#createText button:hover {
+    color: white;
+    background-color: #090C24;
+    border-radius: 5px;
+}
+
+#readText {
+    overflow: hidden;
+    width: 70%;
+    height: 0;
+    margin: auto;
+    background-image: url("https://forum.bpmn.io/uploads/default/original/1X/5e3ed8d11a1f6bdccc2fc4e10af170fc8831accb.PNG");
+    border:3px solid purple;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#word-area{
+    width: 70%;
+    height:35%;
+    margin: auto;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: white;
+
+}
+#word-area h1 {
+    margin:auto;
+    padding-top:17%;
+}
+#controls {
+    border:3px solid black;
+    border-radius: 5px;
+    background-color: grey;
+    width: 50%;
+    margin:auto;
+}
