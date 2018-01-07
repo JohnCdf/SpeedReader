@@ -1,4 +1,4 @@
-
+//1473087c0fa9434eaad4f41ded8c84f6
 var position = 0;
 var splitText = [];
 var WPM;
@@ -33,20 +33,33 @@ var stop = function(){
     $("#Word").text(splitText[0]);
 };
 
-var submitText = function() {
-    let WPMinput = $("#WPM-input").val();
-    let textinput = $("#text-input").val();
-    if (WPMinput.length > 1 && Number(WPMinput) < 5001 &&textinput.length > 1) {
+var submitText = function(extra) {
+    if(!extra){
+        let WPMinput = $("#WPM-input").val();
+        let textinput = $("#text-input").val();
+        if (WPMinput.length > 1 && Number(WPMinput) < 5001 &&textinput.length > 1) {
+            $("#createText").animate({height: "0", "border-width": "0"}, 750);
+            $("#readText").animate({height: "90vh", "border-wdith": "3px"}, 750);
+            readText();
+        }
+        else if(Number(WPMinput) > 5000){
+            alert("You cant read more than 5,000 words per minute! :O")
+        }
+        else {
+            alert("All inputs must be filled out!")
+        }
+    }
+    else {
+        newText()
+        let x = Math.floor(Math.random() * extra.length)
+        let randomArticle = extra[x].snippet;//text random to be read
+        $("#WPM-input").val(450);
+        $("#text-input").val(randomArticle + "... Read more at: " + extra[x].web_url);
         $("#createText").animate({height: "0", "border-width": "0"}, 750);
         $("#readText").animate({height: "90vh", "border-wdith": "3px"}, 750);
         readText();
     }
-    else if(Number(WPMinput) > 5000){
-        alert("You cant read more than 5,000 words per minute! :O")
-    }
-    else {
-        alert("All inputs must be filled out!")
-    }
+
 
 };
 
@@ -76,3 +89,19 @@ var newText = function(){
     $("#readText").animate({height: "0", "border-width": "0"}, 750);
     $("#createText").animate({height: "90vh", "border-wdith": "3px"}, 750);
 };
+
+function newsAPI(){
+var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+url += '?' + $.param({
+  'api-key': "1473087c0fa9434eaad4f41ded8c84f6"
+});
+$.ajax({
+  url: url,
+  method: 'GET',
+}).done(function(result) {
+    submitText(result.response.docs)
+  //submitText(result.response)
+}).fail(function(err) {
+  throw err;
+});
+}

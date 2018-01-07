@@ -48,7 +48,7 @@ nav a:hover{
 }
 
 #readText {
-    overflow: hidden;
+    overflow:hidden;
     width: 70%;
     height: 0;
     margin: auto;
@@ -60,6 +60,7 @@ nav a:hover{
 }
 
 #word-area{
+    overflow: scroll;
     width: 70%;
     height:35%;
     margin: auto;
