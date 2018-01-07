@@ -46,7 +46,10 @@ nav a:hover{
     background-color: #090C24;
     border-radius: 5px;
 }
-
+textarea{
+    min-width: 50%;
+    min-height: 40%;
+}
 #readText {
     overflow:hidden;
     width: 70%;
